@@ -10,7 +10,10 @@ const app: Application = express();
 const server: http.Server = http.createServer(app);
 const io: Server = new Server(server, {
   cors: {
-    origin: "http://localhost:5173" || process.env.CLIENT_URL,
+    origin:
+      process.env.NODE_ENV === "production"
+        ? process.env.CLIENT_URL
+        : "http://localhost:5173",
     methods: ["GET", "POST"],
   },
 });
