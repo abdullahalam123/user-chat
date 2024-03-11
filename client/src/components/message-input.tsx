@@ -1,4 +1,4 @@
-import { FormEvent } from "react";
+import { FormEvent, useEffect, useRef } from "react";
 
 interface MessageInputProps {
   message: string;
@@ -11,9 +11,18 @@ export const MessageInput = ({
   setMessage,
   sendMessage,
 }: MessageInputProps) => {
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
+
   return (
     <form onSubmit={sendMessage}>
       <input
+        ref={inputRef}
         type="text"
         value={message}
         onChange={(event) => setMessage(event.target.value)}

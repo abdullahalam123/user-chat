@@ -7,7 +7,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Real-Time Chat</h1>
+      <h1>Chatt 🗨️</h1>
       <MessageList messages={messages} />
       <MessageInput
         message={message}

@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import socketIOClient, { Socket } from "socket.io-client";
 
-// backend url
-// if(process.env.NODE_ENV === "production") {
-
-// }
-const ENDPOINT = "http://localhost:5000";
+let ENDPOINT: string;
+if (process.env.NODE_ENV === "development") {
+  ENDPOINT = "http://localhost:5000";
+} else {
+  ENDPOINT = "https://user-chat.onrender.com";
+}
 
 export interface Message {
   message: string;

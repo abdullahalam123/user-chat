@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -25,6 +29,8 @@ a:hover {
 body {
   margin: 0;
   display: flex;
+  justify-content: center;
+  align-items: center;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
@@ -33,6 +39,20 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+input {
+  padding: 0.625rem;
+  border: 1px solid #ccc;
+  border-radius: 0.3125rem;
+  font-size: 1rem;
+  width: 18.75rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #646cff;
 }
 
 button {
@@ -45,6 +65,8 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  margin-left: 0.625rem;
+  margin-top: 0.0625rem;
 }
 button:hover {
   border-color: #646cff;
